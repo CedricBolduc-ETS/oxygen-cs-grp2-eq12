@@ -59,10 +59,10 @@ jobs:
         password: ${{ secrets.DOCKER_HUB_ACCESS_PASSWORD }}
         
     - name: Build and push Docker image
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v4
       with:
         context: .
         push: true
-        tags: LOG680Eq12/oxygen-cs-grp2-eq12:latest
+        tags: log680eq12/hvac:latest
       
     
