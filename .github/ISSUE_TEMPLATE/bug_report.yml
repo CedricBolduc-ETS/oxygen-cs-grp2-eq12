@@ -1,0 +1,21 @@
+---
+name: Bug report
+description: Créez un rapport pour nous aider à nous améliorer.
+body:
+  - type: textarea
+    attributes:
+      label: Comportement attendu
+      description: Veuillez décrire le comportement que vous attendez
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Comportement actuel
+      description: Veuillez décrire le comportement actuel et les étapes pour le reproduire
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Logs
+      description: Veuillez inclure ici tous les extraits de logs ou fichiers pertinents.
+      render: text
