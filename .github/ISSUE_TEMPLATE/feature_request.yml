@@ -1,0 +1,24 @@
+---
+name: Feature request
+description: Proposez une idée pour ce projet.
+body:
+  - type: textarea
+    attributes:
+      label: Votre demande de fonctionnalité est-elle liée à un problème ? Décrivez s'il vous plait.
+      description: Une description claire et concise de la nature du problème. Ex. Je suis toujours frustré quand [...]
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Décrivez la solution que vous souhaitez
+      description: Une description claire et concise de ce que vous voulez qu'il se passe.
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Contexte supplémentaire
+      description: Ajoutez ici tout autre contexte concernant la demande de fonctionnalité.
+    validations:
+      required: false
