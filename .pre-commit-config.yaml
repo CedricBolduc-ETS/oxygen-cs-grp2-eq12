@@ -1,5 +1,5 @@
 repos:
-# Syntax validation and some basic sanity checks
+# Formatting
 -   repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
@@ -11,13 +11,11 @@ repos:
     -   id: name-tests-test
     -   id: check-added-large-files
 
-# Automatically sort imports
 -   repo: https://github.com/PyCQA/isort
     rev: 5.12.0
     hooks:
     -   id: isort
 
-# Automatic source code formatting
 -   repo: https://github.com/psf/black
     rev: 23.3.0
     hooks:
@@ -28,3 +26,21 @@ repos:
     rev: v3.0.0a6
     hooks:
     -   id: pylint
+
+# Static Analysis
+-   repo: https://github.com/PyCQA/pydocstyle
+    rev: 6.3.0
+    hooks:
+    -   id: pydocstyle
+
+# Unit Tests
+-   repo: local
+    hooks:
+    -   id: unittest
+        name: unittest
+        entry: python -m unittest discover
+        language: python
+        'types': [python]
+        args: ["-p '*test*.py'"]
+        additional_dependencies: []
+        pass_filenames: false
