@@ -1,3 +1,6 @@
+# Important note
+If you are using this project with the Log680 course, please use the following link to access the latest documentation on how to use this project with the main project that hold the database and the web application: https://github.com/pato-pato/OxgenOS-Eq12-E23
+
 # LOG-680 : Template for Oxygen-CS
 
 ![image](./doc/wheel.png)
