@@ -82,6 +82,24 @@ class Main:
         r = requests.get(f"{self.HOST}/api/hvac/{self.TOKEN}/{action}/{nbTick}")
         details = json.loads(r.text)
         print(details)
+        # Extract message from details
+        message = details['Response']
+        # Send message to the database
+        self.send_message_to_database(date, message)
+
+    def send_message_to_database(self, timestamp, message):
+        try:
+            #SQL query to insert data into the hvac_messages table
+            query = "INSERT INTO oxygen12db.hvac_messages (eventDate, hvac_message) VALUES (%s, %s);"
+
+            cursor = self.DATABASE.cursor()
+            cursor.execute(query, (timestamp, message))
+            self.DATABASE.commit()
+            cursor.close()
+        except psycopg2.Error as e:
+            print(f"Error inserting data into the database: {e}")
+            self.DATABASE.rollback()
+        pass
 
     def send_event_to_database(self, timestamp, event):
         #print timestamp and event
