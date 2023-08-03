@@ -84,8 +84,9 @@ class Main:
         print(details)
         # Extract message from details
         message = details['Response']
+        x = "test"
         # Send message to the database
-        self.send_message_to_database(date, message)
+        self.send_message_to_database(date, x + message)
 
     def send_message_to_database(self, timestamp, message):
         try:
